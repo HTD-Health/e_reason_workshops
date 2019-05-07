@@ -1,2 +1,3 @@
 [@react.component]
-let make = () => <div> <Logo /> <NewGameButton /> <Question /> <AwardTrack /> </div>;
+let make = () =>
+  <div> <Logo /> <NewGameButton /> <Question /> <AwardTrack /> </div>;

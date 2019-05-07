@@ -1,4 +1,4 @@
 [@react.component]
 let make = () => {
-  <div> <TODO message="New Game Button" /> </div>;
+  <div> <TODO message="NewGameButton" /> </div>;
 };

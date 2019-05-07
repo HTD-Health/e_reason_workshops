@@ -5,14 +5,7 @@ let make = (~message: string, ~children: option(React.element)=?) => {
     | Some(children) => children
     | None => React.null
     };
-  <div
-    style={ReactDOMRe.Style.make(
-      ~border="1px dashed gray",
-      ~padding="10px",
-      ~margin="5px 0",
-      ~borderRadius="5px",
-      (),
-    )}>
+  <div className="todo">
     {ReasonReact.string("TODO: " ++ message)}
     children
   </div>;

@@ -1,3 +1,3 @@
 [@react.component]
 let make = () =>
-  <TODO message="Award Track"> <Award /> <Award /> <Award /> </TODO>;
+  <TODO message="AwardTrack"> <Award /> <Award /> <Award /> </TODO>;
