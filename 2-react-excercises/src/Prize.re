@@ -1,8 +1,3 @@
-type tier =
-  | Normal
-  | Guaranteed
-  | Grand;
-
 type state =
   | Past
   | Current

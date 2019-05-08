@@ -10,18 +10,18 @@ type state =
      A. Treść odpowiedzi
    </div>
 
-   Selected:
-   <div class="answer answer-selected">
+   Highlighted:
+   <div class="answer highlighted">
      B. Treść odpowiedzi
    </div>
 
    Correct:
-   <div class="answer answer-correct">
+   <div class="answer correct">
      C. Treść odpowiedzi
    </div>
 
    Wrong:
-   <div class="answer answer-wrong">
+   <div class="answer wrong">
      D. Treść odpowiedzi
    </div>
 

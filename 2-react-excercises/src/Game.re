@@ -9,21 +9,19 @@ let firstQuestion: Core.question = {
   correctAnswerId: A,
 };
 
-type wrong = {
-  answeredId: Core.answerId,
-  correctId: Core.answerId,
+let firstPrize: Core.prize = {
+  amount: 500,
+  tier: Normal,
+  question: firstQuestion,
 };
-
-type answeringState =
-  | NotHighlighted
-  | Higlighted(Core.answerId)
-  | AnsweredCorrect(Core.answerId)
-  | AnsweredWrong(wrong);
 
 type state = {
-  currentQuestion: Core.question,
-  answeringState: answeringState,
+  currentPrize: Core.prize,
+  answeringState: Core.answeringState,
 };
+
+type action =
+  | SelectAnswer(Core.answerId);
 
 [@react.component]
 let make = () =>
