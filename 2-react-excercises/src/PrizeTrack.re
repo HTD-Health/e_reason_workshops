@@ -7,4 +7,11 @@ let make = () =>
     <Prize />
     <Prize />
     <Prize />
+    <Prize />
+    <Prize />
+    <Prize />
+    <Prize />
+    <Prize />
+    <Prize />
+    <Prize />
   </TODO>;

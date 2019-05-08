@@ -19,16 +19,29 @@ body {
   background: rgba(255, 255, 255, 0.1);
 }
 
+.root {
+  display: flex;
+}
+
 .left-column {
   list-style: none;
   width: 75%;
   float: left;
+  display: flex;
+  flex-direction: column;
 }
 
 .right-column {
   list-style: none;
   width: 25%;
   float: right;
+}
+
+.logo {
+  flex: 1 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media only screen and (max-width: 730px) {
@@ -53,12 +66,18 @@ body {
   font-size: 1.2em;
 }
 
+.question-text {
+  font-size: 1.5em;
+  text-align: center;
+}
+
 .answer {
   padding: 10px;
   margin: 10px;
   color: white;
   border-radius: 20px;
   border: 2px solid white;
+  cursor: pointer;
   transition: all 0.3s ease 0s;
 }
 
@@ -70,12 +89,12 @@ body {
 }
 
 .wrong {
-  background-color: rgba(0, 255, 0, 0.5);
+  background-color: rgba(255, 0, 0, 0.5);
   color: white;
 }
 
 .correct {
-  background-color: rgba(255, 0, 0, 0.5);
+  background-color: rgba(0, 255, 0, 0.5);
   color: white;
 }
 
