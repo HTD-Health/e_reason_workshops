@@ -1,3 +1,12 @@
 [@react.component]
 let make = () =>
-  <div> <Logo /> <NewGameButton /> <Question /> <AwardTrack /> </div>;
+  <div>
+    <div className="left-column">
+      <Logo />
+      <Question />
+    </div>
+    <div className="right-column">
+      <NewGameButton />
+      <PrizeTrack />
+    </div>
+  </div>;
