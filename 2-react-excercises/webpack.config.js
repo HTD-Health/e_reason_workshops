@@ -22,5 +22,10 @@ module.exports = {
     contentBase: outputDir,
     port: process.env.PORT || 8000,
     historyApiFallback: true
+  },
+  resolve: {
+    alias: {
+      'react-confetti': path.join(__dirname, 'src/react-confetti.js')
+    }
   }
 };

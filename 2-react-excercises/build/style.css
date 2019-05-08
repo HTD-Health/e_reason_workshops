@@ -129,3 +129,8 @@ body {
 
 .help {
 }
+
+canvas {
+  /* Avoid stealing mouse input by react-confetti canvas */
+  pointer-events: none;
+}
