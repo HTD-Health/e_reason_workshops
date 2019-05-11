@@ -1,3 +1,10 @@
+/*
+    <div class="list">
+      <Prize />
+      <Prize />
+    </div>
+ */
+
 [@react.component]
 let make = () =>
   <TODO message="PrizeTrack">

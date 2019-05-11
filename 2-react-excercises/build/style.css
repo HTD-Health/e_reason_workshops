@@ -111,20 +111,28 @@ body {
 
 .prize {
   color: #e1a02e;
-  padding: 5px;
-}
-
-.prize-border {
-  color: white;
-  padding: 5px;
-}
-
-.prize-active {
   margin: 5px 0;
+  padding: 5px;
+  border-radius: 20px;
+}
+
+.prize-guaranteed {
+  color: white;
+}
+
+.prize-grand {
+  font-size: 1.2em;
+}
+
+.prize-current {
   padding: 5px;
   background-image: linear-gradient(yellow, orange);
   color: #0000bb;
-  border-radius: 20px;
+}
+
+.prize-past {
+  background-color: green;
+  color: black;
 }
 
 .help {

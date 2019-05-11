@@ -1,5 +1,14 @@
 # Milion w Rozumie
 
+## Spis treści
+
+* [Opis projektu](#opis-projektu)
+* [Etap 0: instalacja projektu](#etap-0-instalacja-projektu)
+* [Etap 1: reason-react](#etap-1-reason-react)
+* [Etap 2: współpraca JS & Reason](TODO)
+* [Etap 3: używanie JSON API](TODO)
+* [Zadania dodatkowe](#zadania-dodatkowe)
+
 ## Opis projektu
 
 Będziemy implementować aplikację - quiz "a-la Milionerzy" - Milion w Rozumie (ReasonML 😉).
@@ -8,14 +17,6 @@ Podczas gry użytkownik odpowiada na pytania o rosnącym poziomie trudności ora
 Każde pytanie ma 4 możliwe odpowiedzi, ale tylko jedna jest poprawna.
 
 Quiz trwa do momentu kiedy użytkownik zdobędzie główną nagrodę, lub pomyli się w odpowiedzi. W przypadku przegranej, nagroda wynosi wartość progu "gwarantowanego" który przekroczono.
-
-## Spis treści
-
-3. [Etap 0: instalacja projektu](#etap-0-instalacja-projektu)
-3. [Etap 1: podstawy reason-react](TODO)
-4. [Etap 2: zaawansowany reason-react](TODO)
-5. [Etap 3: współpraca JS & Reason](TODO)
-6. [Etap 4: używanie JSON API](TODO)
 
 ## Etap 0: instalacja projektu
 
@@ -43,7 +44,7 @@ npm run server
 
 Otwórz aplikację w przeglądarce pod adresem http://localhost:8000
 
-## Etap 1: podstawy reason-react
+## Etap 1: reason-react
 
 Zaczynamy prezentacją przedstawiającą podstawy pisania aplikacji Reactowych w Reason.
 
@@ -51,15 +52,18 @@ Po prezentacji wykonaj po kolei poniższe zadania (warto zrobić git commit po w
 
 Jeśli skończysz wszystkie zadania wcześniej, możesz spróbować zadań z następnego etapu, lub [Zadań dodatkowych](#zadania-dodatkowe).
 
-### Zadanie 1: komponent `Logo`
+<details>
+<summary><strong>Zadanie 1: komponent Logo</strong></summary>
 
 * Otwórz plik `src/Logo.re`. Ten mały komponent nie przyjmuje żadnych propsów i jest odpowiedzialny za logo widoczne na głównym ekranie aplikacji.
 
 * Zastąp istniejącą funkcję `make` tak aby rezultatem był HTML zawarty w komentarzu nad funkcją. Sprawdź rezultat w przeglądarce.
 
 **Wskazówka:** Zwracaj uwagę na błędy kompilacji. Pamiętaj że w React atrybut HTML `class` osiąga się za pomocą propa `className`.
+</details>
 
-### Zadanie 2: komponent `QuestionText`
+<details>
+<summary><strong>Zadanie 2: komponent QuestionText</strong></summary>
 
 * Dodaj prop `text` typu `string` do komponentu `QuestionText`.
 
@@ -68,8 +72,10 @@ Jeśli skończysz wszystkie zadania wcześniej, możesz spróbować zadań z nas
 * Wróć do komponentu `QuestionText` i uzupełnij funkcję `make` aby renderowała podany markup wraz z wartością propa `text`.
 
 **Wskazówka:** Jeśli nie pamiętasz, sprawdź w prezentacji jak wyrenderować wartość typu `string` w Reason-React.
+</details>
 
-### Zadanie 3: komponent `Answer`
+<details>
+<summary><strong>Zadanie 3: komponent Answer</strong></summary>
 
 * Zapoznaj się z typem `answerId` w pliku `Core.re`. Jest to variant z czterema możliwościami: A, B, C, D.
 
@@ -78,8 +84,10 @@ Jeśli skończysz wszystkie zadania wcześniej, możesz spróbować zadań z nas
 * Wróć do komponentu `Answer` i uzupełnij funkcję `make`. Na razie użyj HTML pod komentarzem `Initial:`
 
 **Wskazówka:** Użyj pattern-matchingu aby wyrenderować ID odpowiedzi (A, B, C, D).
+</details>
 
-### Zadanie 4: komponent `Question`
+<details>
+<summary><strong>Zadanie 4: komponent Question</strong></summary>
 
 * Uzupełnij funkcję `make` w komponencie `Question` aby renderowała poprawny HTML.
 
@@ -88,8 +96,10 @@ Jeśli skończysz wszystkie zadania wcześniej, możesz spróbować zadań z nas
 * Użyj nowego propu aby przekazać wartości `text` do `QuestionText` i propy `id`, `text` do `Answer`. Zweryfikuj czy pytanie zmieniło się w przeglądarce.
 
 **Wskazówka:** Sprawdź w prezentacji jak wyrenderować wartość typu `list` - przyda się do renderowania `Answer`.
+</details>
 
-### Zadanie 5: klikanie na `Answer`
+<details>
+<summary><strong>Zadanie 5: klikanie na odpowiedź</strong></summary>
 
 * Dodaj prop `onClick` do komponentu `Answer`. Niech będzie to funkcja przyjmująca `Core.answerId` i nie zwracająca nic: `Core.answerId => unit`.
 
@@ -97,9 +107,11 @@ Jeśli skończysz wszystkie zadania wcześniej, możesz spróbować zadań z nas
 
 * Napraw błędy kompilacji przekazując callback do `<Question />` w `Game` i przekazując ten sam callback do `<Answer onClick={} />` w `Question`. W callbacku możesz wypisać po prostu zwracaną wartość `answerId` do konsoli.
 
-**Wskazówka**: Użyj funkcji `Js.log`, `Js.log2` etc. do wypisywania do konsoli.
+**Wskazówka**: Możesz użyć funkcji `Js.log`, `Js.log2` etc. do wypisywania do konsoli.
+</details>
 
-### Zadanie 6: kolorowanie `Answer`
+<details>
+<summary><strong>Zadanie 6: kolorowanie odpowiedzi</strong></summary>
 
 * Do komponentu `Answer` dodaj prop `state` typu `state` (zdefiniowanego na górze pliku). Ten prop będzie oznaczał czy odpowiedż jest aktualnie zaznaczona, poprawna albo niepoprawna.
 
@@ -108,10 +120,10 @@ Jeśli skończysz wszystkie zadania wcześniej, możesz spróbować zadań z nas
 * Zmodyfikuj renderowanie `Answer` tak aby zmienić `className` w zależności od `state`. W komentarzu nad komponentem jest docelowy markup HTML.
 
 * Zweryfikuj renderowanie różnych stanów odpowiedzi w przeglądarce.
+</details>
 
-## Etap 2: zaawansowany reason-react
-
-### Zadanie 7: aktualny stan odpowiedzi
+<details>
+<summary><strong>Zadanie 7: dynamiczny stan odpowiedzi</strong></summary>
 
 * Zapoznaj się z typem `Core.answeringState`. Typ ten modeluje w jakim stanie obecnie znajduje się pytanie: nie odpowiedziane, zaznaczona odpowiedź, odpowiedź poprawna, odpowiedź niepoprawna.
 
@@ -120,8 +132,10 @@ Jeśli skończysz wszystkie zadania wcześniej, możesz spróbować zadań z nas
 * W `Question`, na podstawie wartości nowego propu `answeringState` przekaż tym razem poprawne wartości `state` do `Answer`. Pomyśl jaki jest stan pojedyńczej odpowiedzi w zależności od aktualnego `answeringState`.
 
 **Wskazówka:** Użyj pattern-matchingu na `answeringState` aby stworzyć poprawny stan dla odpowiedzi.
+</details>
 
-### Zadanie 8: reducer
+<details>
+<summary><strong>Zadanie 8: implementacja reducera</strong></summary>
 
 * Zapoznaj się z typami `state`, `action` oraz funkcją `reducer` w `Game`. Te elementy kontrolują jak stan gry będzie zmieniał się w zależności od akcji podejmowanych przez użytkownika.
 
@@ -139,20 +153,52 @@ Jeśli skończysz wszystkie zadania wcześniej, możesz spróbować zadań z nas
 **Wskazówka:** Użyj "spread operator" aby wygodnie zaktualizować jedno pole w stanie: `{ ...state, answeringState: _ }`
 
 **Wskazówka:** Funkcja `Belt.List.getExn(list, index)` może się przydać w tym zadaniu.
+</details>
 
-### Zadanie 9: przechodzenie do następnego pytania
+<details>
+<summary><strong>Zadanie 9: przechodzenie do następnego pytania</strong></summary>
 
 * Przekaż aktualne pytanie do komponentu `<Question />` w `Game`. Wydobądź aktualnie pytanie ze stanu na podstawie wartości `state.currentPrizeIndex` i `state.prizes`. `Prizes` są reprezentowane jako lista od najprostszych do najtrudniejszych.
 
 * W odpowiednim miejscu w reducerze, uaktualnij stan tak aby przejść do następnego pytania.
 
 * Zweryfikuj działanie gry w przeglądarce. W tym momencie powinno się już dać odpowiedzieć na wszystkie pytania aż do ostatniego. Umiesz to zrobić bez patrzenia na poprawne odpowiedzi? ;)
+</details>
 
-### Zadanie 10: komponenty `Prize` i `PrizeTrack`
+<details>
+<summary><strong>Zadanie 10: komponent PrizeTrack</strong></summary>
 
-TODO
+* Dodaj propy `prizes` (typu `list(Core.prize)`) i `currentPrizeIndex` do komponentu `PrizeTrack`.
 
-### Zadanie 11: komponent `NewGameButton`
+* Napraw błędy kompilacji w `Game` przekazując propy z aktualnego stanu gry.
+
+* Dodaj prop `amount` typu `int` do komponentu `Prize` i wyrenderuj `amount`.
+
+* Uaktualnij komponent `PrizeTrack` aby zwracał poprawny HTML oraz renderował `Prize` dla każdej nagrody przekazanej w propie `prizes`.
+
+* Spróbuj odwrócić kolejność renderowania nagród tak żeby nagroda główna była na górze.
+
+**Wskazówka:** Metody `string_of_int` oraz `Belt.List.reverse` mogą się przydać w tym zadaniu.
+</details>
+
+<details>
+<summary><strong>Zadanie 11: komponent Prize</strong></summary>
+
+* Dodaj prop `state` typu `state` do `Prize`. Ten prop decyduje czy dana nagroda jest aktualna, już wygrana czy dopiero przyszła. Napraw błąd kompilacji przekazując poprawne varianty do `Prize` w `PrizeTrack`.
+
+* Zmodyfikuj renderowanie `Prize` tak aby dodawało odpowiednie `className` na podstawie `state`.
+
+* Dodaj prop `tier` typu `Core.tier` do `Prize` i przekaż odpowiednie wartości w `PrizeTrack`.
+
+* Znów zmodyfikuj renderowanie `Prize` tak aby dodawało odpowiednią klasę na podstawie `tier`.
+
+* Zweryfikuj poprawne zachowanie całego prawego sidebara w przeglądarce.
+
+**Wskazówka:** Konkatenacja stringów za pomocą operatora `++` może się przydać w tym zadaniu.
+</details>
+
+<details>
+<summary><strong>Zadanie 12: komponent NewGameButton</strong></summary>
 
 * Uzupełnij `NewGameButton.re` tak aby zwracał poprawny HTML.
 
@@ -161,18 +207,19 @@ TODO
 * Dodaj prop `onClick` do komponentu i podłącz go do przycisku. Niech klikanie na przycisk wysyła akcję `NewGame`.
 
 * Zmodyfikuj reducer tak aby zresetować stan gry po otrzymaniu akcji `NewGame`.
+</details>
 
-## Etap 3: współpraca JS & Reason
+## Etap 2: współpraca JS & Reason
 
 1. Renderowanie komponentu react-confetti przy poprawnej odpowiedzi
 2. Umieszczenie komponentu Game w większej aplikacji
 
-## Etap 4: używanie JSON API
+## Etap 3: używanie JSON API
 
 2. Pobieranie listy pytań z API (atdgen?)
 
 ## Zadania dodatkowe
 
-1. Zaimplementuj ekran końca gry pokazujący ostateczny wynik gracza. Pamiętaj o obsłudze zarówno przegranej jak i wygranej.
-2. Zaimplementuj przycisk powodujący rezygnację z gry i wzięcie nagrody gwarantowanej.
-3. Zaimplementuj koła ratunkowe: 50/50, pytanie do publiczności lub telefon do przyjaciela.
+* Zaimplementuj ekran końca gry pokazujący ostateczny wynik gracza. Pamiętaj o obsłudze zarówno przegranej jak i wygranej.
+* Zaimplementuj przycisk powodujący rezygnację z gry i wzięcie nagrody gwarantowanej.
+* Zaimplementuj koła ratunkowe: 50/50, pytanie do publiczności lub telefon do przyjaciela.
