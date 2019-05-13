@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import { make as Game } from "./Game.bs.js";
+
 function MyProject() {
   return (
     <div className="external-project">
@@ -8,7 +10,7 @@ function MyProject() {
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
       <div className="todo">
-        <em>Tutaj wyrenderuj komponent Game</em>
+        <Game />
       </div>
 
       <footer>Copyright &copy; 2019</footer>

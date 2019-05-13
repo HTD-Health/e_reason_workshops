@@ -21,4 +21,19 @@ type state =
   | Future;
 
 [@react.component]
-let make = () => <div> <TODO message="Prize" /> </div>;
+let make = (~amount: int, ~state: state, ~tier: Core.tier) => {
+  let stateClassName =
+    switch (state) {
+    | Past => "prize-past"
+    | Current => "prize-current"
+    | Future => ""
+    };
+  let tierClassName =
+    switch (tier) {
+    | Normal => ""
+    | Guaranteed => "prize-guaranteed"
+    | Grand => "prize-grand"
+    };
+  let className = "prize " ++ stateClassName ++ " " ++ tierClassName;
+  <div className> {React.string(string_of_int(amount) ++ " PLN")} </div>;
+};

@@ -27,6 +27,23 @@ type state =
 
  */
 [@react.component]
-let make = () => {
-  <div> <TODO message="Answer" /> </div>;
+let make =
+    (~id: Core.answerId, ~text: string, ~onClick: unit => unit, ~state: state) => {
+  let id =
+    switch (id) {
+    | A => "A"
+    | B => "B"
+    | C => "C"
+    | D => "D"
+    };
+  let className =
+    switch (state) {
+    | Initial => "answer"
+    | Highlighted => "answer highlighted"
+    | Correct => "answer correct"
+    | Wrong => "answer wrong"
+    };
+  <div className onClick={_ => onClick()}>
+    {React.string(id ++ ". " ++ text)}
+  </div>;
 };

@@ -8,5 +8,5 @@
 
 [@react.component]
 let make = () => {
-  <div> <TODO message="Logo" /> </div>;
+  <div className="logo"> <img src="logo.svg" alt="Milion w Rozumie" /> </div>;
 };
