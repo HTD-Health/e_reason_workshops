@@ -5,7 +5,16 @@
   font-family: "Roboto", sans-serif;
 }
 
+html, body {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
 .root {
+  height: 100%;
   background: linear-gradient(90deg, #070141, #001137);
   background-repeat: repeat;
   color: white;
@@ -62,13 +71,14 @@
 }
 
 .question {
-  margin: 40px 0;
+  margin: 40px;
   font-size: 1.2em;
 }
 
 .question-text {
   font-size: 1.5em;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .answer {

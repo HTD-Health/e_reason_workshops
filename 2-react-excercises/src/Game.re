@@ -25,7 +25,7 @@ type action =
 
 [@react.component]
 let make = () =>
-  <div>
+  <div className="root">
     <div className="left-column">
       <Logo />
       <Question />
