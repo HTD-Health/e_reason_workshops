@@ -15,16 +15,35 @@ let firstPrize: Core.prize = {
   question: firstQuestion,
 };
 
+let prizes = [firstPrize];
+
 type state = {
-  currentPrize: Core.prize,
+  prizes: list(Core.prize),
+  currentPrizeIndex: int,
   answeringState: Core.answeringState,
 };
 
 type action =
   | SelectAnswer(Core.answerId);
 
+let reducer = (state: state, action: action) => {
+  switch (action) {
+  | SelectAnswer(_) => state /* TODO */
+  };
+};
+
+let initialState = {
+  prizes: prizes,
+  currentPrizeIndex: 0,
+  answeringState: NotHighlighted,
+};
+
 [@react.component]
-let make = () =>
+let make = () => {
+  /*
+  let (state, dispatch) = React.useReducer(reducer, initialState);
+  */
+
   <div className="root">
     <div className="left-column">
       <Logo />
@@ -35,3 +54,4 @@ let make = () =>
       <PrizeTrack />
     </div>
   </div>;
+};
