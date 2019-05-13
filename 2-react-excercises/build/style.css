@@ -38,6 +38,7 @@ html, body {
   float: left;
   display: flex;
   flex-direction: column;
+  padding: 10px;
 }
 
 .right-column {
@@ -46,6 +47,8 @@ html, body {
   float: right;
   display: flex;
   flex-direction: column;
+  padding: 10px;
+  border-left: 1px solid gray;
 }
 
 .logo {
