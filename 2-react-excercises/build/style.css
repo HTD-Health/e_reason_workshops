@@ -44,6 +44,8 @@ html, body {
   list-style: none;
   width: 25%;
   float: right;
+  display: flex;
+  flex-direction: column;
 }
 
 .logo {
@@ -128,10 +130,12 @@ html, body {
 
 .prize-guaranteed {
   color: white;
+  font-weight: bold;
 }
 
 .prize-grand {
   font-size: 1.2em;
+  font-weight: bold;
 }
 
 .prize-current {
