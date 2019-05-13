@@ -1,21 +1,4 @@
-let firstQuestion: Core.question = {
-  text: "W jakim jezyku napisana jest aplikacja Milion w Rozumie?",
-  answers: [
-    {id: A, text: "ReasonML"},
-    {id: B, text: "JavaScript"},
-    {id: C, text: "Elm"},
-    {id: D, text: "Dart"},
-  ],
-  correctAnswerId: A,
-};
-
-let firstPrize: Core.prize = {
-  amount: 500,
-  tier: Normal,
-  question: firstQuestion,
-};
-
-let prizes = [firstPrize];
+let firstQuestion = Core.firstQuestion;
 
 type state = {
   prizes: list(Core.prize),
@@ -33,7 +16,7 @@ let reducer = (state: state, action: action) => {
 };
 
 let initialState = {
-  prizes: prizes,
+  prizes: Core.prizes,
   currentPrizeIndex: 0,
   answeringState: NotHighlighted,
 };
