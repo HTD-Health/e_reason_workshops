@@ -3,14 +3,13 @@
   "private": true,
   "version": "0.0.1",
   "scripts": {
-    "build": "bsb -make-world",
-    "start": "bsb -make-world -w",
+    "start:bs": "bsb -make-world -w",
+    "start:js": "webpack-dev-server",
+    "start:server": "node src/server.js",
     "clean": "bsb -clean-world",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack -w",
-    "webpack:production": "NODE_ENV=production webpack",
-    "server": "webpack-dev-server",
-    "refmt": "find src -name '*.re*' | xargs node_modules/bs-platform/lib/refmt.exe --in-place"
+    "bundle": "bsb -make-world && NODE_ENV=production webpack",
+    "refmt": "find src -name '*.re*' | xargs node_modules/bs-platform/lib/refmt.exe --in-place",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "BuckleScript"
@@ -19,6 +18,8 @@
   "license": "MIT",
   "repository": "https://github.com/htdevelopers/e_reason_workshops",
   "dependencies": {
+    "@glennsl/bs-json": "^3.0.0",
+    "bs-fetch": "^0.3.1",
     "react": "^16.8.1",
     "react-confetti": "^3.1.0",
     "react-dom": "^16.8.1",
@@ -30,6 +31,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
     "bs-platform": "^5.0.2",
+    "express": "^4.16.4",
     "html-webpack-plugin": "^3.2.0",
     "webpack": "^4.0.1",
     "webpack-cli": "^3.1.1",

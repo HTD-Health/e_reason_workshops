@@ -5,8 +5,8 @@
 * [Opis projektu](#opis-projektu)
 * [Etap 0: instalacja projektu](#etap-0-instalacja-projektu)
 * [Etap 1: reason-react](#etap-1-reason-react)
-* [Etap 2: współpraca JS & Reason](#współpraca-js--reason)
-* [Etap 3: używanie JSON API](TODO)
+* [Etap 2: współpraca JS & Reason](#etap-2-współpraca-js--reason)
+* [Etap 3: używanie JSON API](#etap-3-używanie-json-api)
 * [Zadania dodatkowe](#zadania-dodatkowe)
 
 ## Opis projektu
@@ -33,13 +33,13 @@ npm install
 W dwóch osobnych terminalach uruchom: kompilator Reason -> JavaScript
 
 ```
-npm start
+npm run start:bs
 ```
 
 Oraz server developerski:
 
 ```
-npm run server
+npm run start:js
 ```
 
 Otwórz aplikację w przeglądarce pod adresem http://localhost:8000
@@ -245,7 +245,43 @@ W tym zadaniu zobaczymy jak proste jest importowanie komponentów Reasonowych w 
 
 ## Etap 3: używanie JSON API
 
-2. Pobieranie listy pytań z API (atdgen?)
+Najpierw zapoznaj się z prezentacją nt. używania JSON API w Reason.
+Następnie wykonaj poniższe ćwiczenia w swoim projekcie:
+
+<details>
+<summary><strong>Zadanie 16: uruchomienie serwera</strong></summary>
+
+* Uruchom dodatkowy serwer za pomocą komendy `npm run start:server`.
+
+* Odwiedź adres http://localhost:8001/prizes.json w przeglądarce. Po kilku sekundach powinien się pojawić zwracany JSON. Zapoznaj się ze zwracaną strukturą danych.
+
+</details>
+
+<details>
+<summary><strong>Zadanie 17: parsowanie odpowiedzi z API</strong></summary>
+
+* W komponencie `Game` użyj hooka `useEffect` aby wywołać request do endpointu nowego API podczas montowania komponentu. Wypisz zwrócony JSON na konsolę aby przetestować działanie.
+
+* Uzupełnij moduł `src/Api.re` o funkcje parsujące json z użyciem biblioteki `bs-json`.
+
+* Wywołaj funkcję parsującą na JSONie zwróconym z API.
+
+* Używając sparsowanych danych, wypisz na konsolę kolejno zwrócone pytania.
+</details>
+
+<details>
+<summary><strong>Zadanie 18: stan ładowania</strong></summary>
+
+* Do variantu `Game.action` dodaj akcje `Loaded(list(Core.prize))` i `ErrorLoading`
+
+* Wyślij akcję `Loaded()` kiedy dane zostaną sparsowane z API, i akcję `Error` w przypadku błędu Promise.
+
+* Zmień variant `Game.state` aby miał wartości `Loading`, `Error`, `Loaded(state)`. Zmień pierwotny stan na `Loading`.
+
+* W reducerze, zmieniaj stan odpowiednio reagując na nowe akcje.
+
+* Uaktualnij renderowanie `Game`, tak aby uwzględnić stany `Loading` i `ErrorLoading`
+</details>
 
 ## Zadania dodatkowe
 
