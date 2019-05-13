@@ -5,7 +5,7 @@
 * [Opis projektu](#opis-projektu)
 * [Etap 0: instalacja projektu](#etap-0-instalacja-projektu)
 * [Etap 1: reason-react](#etap-1-reason-react)
-* [Etap 2: współpraca JS & Reason](TODO)
+* [Etap 2: współpraca JS & Reason](#współpraca-js--reason)
 * [Etap 3: używanie JSON API](TODO)
 * [Zadania dodatkowe](#zadania-dodatkowe)
 
@@ -211,8 +211,37 @@ Jeśli skończysz wszystkie zadania wcześniej, możesz spróbować zadań z nas
 
 ## Etap 2: współpraca JS & Reason
 
-1. Renderowanie komponentu react-confetti przy poprawnej odpowiedzi
-2. Umieszczenie komponentu Game w większej aplikacji
+Najpierw zapoznaj się z prezentacją nt. kompatybilności JavaScript z Reason. Następnie wykonaj poniższe ćwiczenia w swoim projekcie:
+
+<details>
+<summary><strong>Zadanie 13: react-confetti</strong></summary>
+
+* Zapoznaj się z dokumentacją biblioteki `react-confetti` (https://github.com/alampros/react-confetti)
+
+* W pliku `Confetti.re` stwórz binding to komponentu `react-confetti`, przekazując narazie tylko jednego propa: `numberOfPieces`.
+
+* Wyrenderuj komponent `Confetti` w `Game` kiedy użytkownik odpowie poprawnie na pytanie. Zweryfikuj działanie w przeglądarce.
+</details>
+
+<details>
+<summary><strong>Zadanie 14: więcej confetti</strong></summary>
+
+* Dodaj więcej propów według swojego uznania do dowiązania w `Confetti` (https://github.com/alampros/react-confetti)
+
+* Pozmieniaj wartości propów aż efekt będzie zadowalający :)
+</details>
+
+<details>
+<summary><strong>Zadanie 15: importowanie Reason</strong></summary>
+
+W tym zadaniu zobaczymy jak proste jest importowanie komponentów Reasonowych w istniejącym projekcie
+
+* Wejdź na adres http://localhost:8000/project.html . Ta strona ma symulować projekt napisany w JavaScript.
+
+* Zapoznaj się z plikiem `src/project.js` w którym znajduje się renderowanie tego projektu.
+
+* Zaimportuj Reasonowy komponent `Game` i wyrenderuj go w odpowiednim miejscu. Zweryfikuj działanie na stronie projektu.
+</details>
 
 ## Etap 3: używanie JSON API
 
@@ -223,3 +252,4 @@ Jeśli skończysz wszystkie zadania wcześniej, możesz spróbować zadań z nas
 * Zaimplementuj ekran końca gry pokazujący ostateczny wynik gracza. Pamiętaj o obsłudze zarówno przegranej jak i wygranej.
 * Zaimplementuj przycisk powodujący rezygnację z gry i wzięcie nagrody gwarantowanej.
 * Zaimplementuj koła ratunkowe: 50/50, pytanie do publiczności lub telefon do przyjaciela.
+* Zaimplementuj randomizację pytań / odpowiedzi z bazy dostępnych pytań. Możesz wymyślić własne pytania!

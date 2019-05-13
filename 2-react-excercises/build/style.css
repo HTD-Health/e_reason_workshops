@@ -5,7 +5,7 @@
   font-family: "Roboto", sans-serif;
 }
 
-body {
+.root {
   background: linear-gradient(90deg, #070141, #001137);
   background-repeat: repeat;
   color: white;
@@ -141,4 +141,13 @@ body {
 canvas {
   /* Avoid stealing mouse input by react-confetti canvas */
   pointer-events: none;
+}
+
+.external-project {
+  padding: 50px;
+  height: 100%;
+}
+
+.external-project > h1 {
+  margin-bottom: 30px;
 }

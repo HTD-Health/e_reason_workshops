@@ -1,19 +1,33 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const outputDir = path.join(__dirname, 'build/');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const outputDir = path.join(__dirname, "build/");
 
-const isProd = process.env.NODE_ENV === 'production';
+const isProd = process.env.NODE_ENV === "production";
 
 module.exports = {
-  entry: './src/Index.bs.js',
-  mode: isProd ? 'production' : 'development',
+  entry: {
+    Index: "./src/Index.bs.js",
+    project: "./src/project.js"
+  },
+  mode: isProd ? "production" : "development",
   output: {
     path: outputDir,
-    filename: 'Index.js'
+    filename: "[name].js"
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        }
+      }
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html',
+      template: "src/index.html",
       inject: false
     })
   ],
@@ -25,7 +39,8 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'react-confetti': path.join(__dirname, 'src/react-confetti.js')
+      "react-confetti": path.join(__dirname, "src/react-confetti.js")
     }
-  }
+  },
+  stats: "minimal"
 };
