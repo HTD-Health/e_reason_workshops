@@ -8,6 +8,7 @@
 * [Etap 2: współpraca JS & Reason](#etap-2-współpraca-js--reason)
 * [Etap 3: używanie JSON API](#etap-3-używanie-json-api)
 * [Zadania dodatkowe](#zadania-dodatkowe)
+* [Przydatne linki](#przydatne-linki)
 
 ## Opis projektu
 
@@ -15,8 +16,10 @@ Będziemy implementować aplikację - quiz "a-la Milionerzy" - Milion w Rozumie 
 
 Podczas gry użytkownik odpowiada na pytania o rosnącym poziomie trudności oraz wartości pieniężnej.
 Każde pytanie ma 4 możliwe odpowiedzi, ale tylko jedna jest poprawna.
+Interakcja z aplikacją polega na klikaniu w odpowiedzi - pierwsze kliknięcie zaznacza odpowiedż, drugie zatwierdza, trzecie przechodzi do następnego pytania.
 
-Quiz trwa do momentu kiedy użytkownik zdobędzie główną nagrodę, lub pomyli się w odpowiedzi. W przypadku przegranej, nagroda wynosi wartość progu "gwarantowanego" który przekroczono.
+Gra trwa do momentu kiedy użytkownik zdobędzie główną nagrodę, lub pomyli się w odpowiedzi.
+W przypadku przegranej, nagroda wynosi wartość progu "gwarantowanego" który przekroczono.
 
 ## Etap 0: instalacja projektu
 
@@ -46,9 +49,9 @@ Otwórz aplikację w przeglądarce pod adresem http://localhost:8000
 
 ## Etap 1: reason-react
 
-Zaczynamy prezentacją przedstawiającą podstawy pisania aplikacji Reactowych w Reason.
+Zaczęliśmy prezentacją przedstawiającą podstawy pisania aplikacji Reactowych w Reason.
 
-Po prezentacji wykonaj po kolei poniższe zadania (warto zrobić git commit po wykonaniu każdego zadania).
+Po prezentacji i zainstalowaniu projektu wykonaj po kolei poniższe zadania (warto zrobić git commit po wykonaniu każdego zadania).
 
 Jeśli skończysz wszystkie zadania wcześniej, możesz spróbować zadań z następnego etapu, lub [Zadań dodatkowych](#zadania-dodatkowe).
 
@@ -139,7 +142,7 @@ Jeśli skończysz wszystkie zadania wcześniej, możesz spróbować zadań z nas
 
 * Zapoznaj się z typami `state`, `action` oraz funkcją `reducer` w `Game`. Te elementy kontrolują jak stan gry będzie zmieniał się w zależności od akcji podejmowanych przez użytkownika.
 
-* Zmodyfikuje swój callback `onAnswerClick` w `Game` tak aby wysyłał poprawną akcję (funkcja `send` z `React.useReducer`).
+* Zmodyfikuj swój callback `onAnswerClick` w `Game` tak aby wysyłał poprawną akcję (funkcja `send` z `React.useReducer`).
 
 * Uzupełnij funkcję `reducer` aby zwracała stan z nowym `answeringState` w reakcji na akcję `SelectAnswer`.
 
@@ -289,3 +292,10 @@ Następnie wykonaj poniższe ćwiczenia w swoim projekcie:
 * Zaimplementuj przycisk powodujący rezygnację z gry i wzięcie nagrody gwarantowanej.
 * Zaimplementuj koła ratunkowe: 50/50, pytanie do publiczności lub telefon do przyjaciela.
 * Zaimplementuj randomizację pytań / odpowiedzi z bazy dostępnych pytań. Możesz wymyślić własne pytania!
+
+## Przydatne linki
+
+* Operacje na listach (`Belt.List`): https://bucklescript.github.io/bucklescript/api/Belt.List.html
+* Przykłady parsowania JSON (`bs-json`): https://github.com/glennsl/bs-json/blob/master/examples/complex.ml
+* Źródła `reason-react`: https://github.com/reasonml/reason-react/blob/master/src/React.re
+* Dokumentacja react hooks: https://reactjs.org/docs/hooks-reference.html
