@@ -1,15 +1,12 @@
 {
   "name": "react-excercises",
-  "reason": {
-    "react-jsx": 3
-  },
   "sources": {
     "dir" : "src",
     "subdirs" : true
   },
   "bsc-flags": ["-bs-super-errors", "-bs-no-version-header"],
   "package-specs": [{
-    "module": "commonjs",
+    "module": "es6",
     "in-source": true
   }],
   "suffix": ".bs.js",
@@ -19,5 +16,8 @@
     "bs-fetch",
     "@glennsl/bs-json"
   ],
+  "reason": {
+    "react-jsx": 3
+  },
   "refmt": 3
 }
