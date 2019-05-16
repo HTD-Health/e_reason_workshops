@@ -56,7 +56,7 @@ Przykładowy typ `person`:
 * height: integer
 
 **Przydatne dodatkowe funkcje:**
-`print_endline`, `List.iter`, `List.sort`, `String.compare`, `Pervasives.compare`
+`print_endline`, `string_of_int`, `List.iter`, `List.sort`, `String.compare`, `Pervasives.compare`
 </details>
 
 <details>
