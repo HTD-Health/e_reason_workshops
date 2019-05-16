@@ -47,13 +47,16 @@ Jako edytor do plików źródłowych ReasonML zalecamy [Visual Studio Code](http
 2. Następnie przygotuj przykładową bazę danych, składających się z przynajmniej 3 osób i wyświetl ją, korzystając z przygotowanej wcześniej funkcji.
 
 Dodatkowe zadania:
-* posortuj listę wg dowolnego parametru przed wyświetleniem
 * użyj operatora potoku (`|>`) przy tworzeniu funkcji do wyświetlenia
+* posortuj listę wg dowolnego parametru przed wyświetleniem
 
 Przykładowy typ `person`:
 * name: string
 * age: integer
 * height: integer
+
+**Przydatne dodatkowe funkcje:**
+`List.iter`, `List.sort`, `String.compare`, `Pervasives.compare`
 </details>
 
 <details>
