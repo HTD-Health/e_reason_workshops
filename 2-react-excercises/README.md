@@ -21,6 +21,8 @@ Interakcja z aplikacją polega na klikaniu w odpowiedzi - pierwsze kliknięcie z
 Gra trwa do momentu kiedy użytkownik zdobędzie główną nagrodę, lub pomyli się w odpowiedzi.
 W przypadku przegranej, nagroda wynosi wartość progu "gwarantowanego" który przekroczono.
 
+Live demo: http://workshops.htdevelopers.com/e_reason_workshops
+
 ## Etap 0: instalacja projektu
 
 Musisz mieć zainstalowane `npm` (co najmniej w wersji 8 LTS).
